@@ -1,0 +1,40 @@
+2024-11-18 03:46:14,266 23780 INFO ? odoo: Odoo version 18.0 
+2024-11-18 03:46:14,266 23780 INFO ? odoo: Using configuration file at C:\Users\KHANG\Desktop\OdooProject\odoo.conf 
+2024-11-18 03:46:14,266 23780 INFO ? odoo: addons paths: ['C:\\Users\\KHANG\\Desktop\\OdooProject\\odoo\\addons', 'c:\\odoo\\data\\addons\\18.0', 'c:\\odoo\\addons', 'c:\\odoo\\custom', 'c:\\users\\khang\\desktop\\odooproject\\odoo\\addons'] 
+2024-11-18 03:46:14,267 23780 INFO ? odoo: database: odoo@localhost:5432 
+2024-11-18 03:46:14,383 23780 INFO ? odoo.addons.base.models.ir_actions_report: You need Wkhtmltopdf to print a pdf version of the reports. 
+2024-11-18 03:46:14,387 23780 INFO ? odoo.addons.base.models.ir_actions_report: You need Wkhtmltoimage to generate images from html. 
+2024-11-18 03:46:14,559 23780 CRITICAL ? odoo.modules.module: Couldn't load module web 
+2024-11-18 03:46:14,559 23780 ERROR ? odoo.service.server: Failed to load server-wide module `web`.
+The `web` module is provided by the addons found in the `openerp-web` project.
+Maybe you forgot to add those addons in your addons_path configuration. 
+Traceback (most recent call last):
+  File "C:\Users\KHANG\Desktop\OdooProject\odoo\service\server.py", line 1252, in load_server_wide_modules
+    odoo.modules.module.load_openerp_module(m)
+  File "C:\Users\KHANG\Desktop\OdooProject\odoo\modules\module.py", line 384, in load_openerp_module
+    __import__(qualname)
+ModuleNotFoundError: No module named 'odoo.addons.web'
+2024-11-18 03:46:14,565 23780 INFO ? odoo.service.server: HTTP service (werkzeug) running on Macbook:8069 
+2024-11-18 03:46:32,027 23780 INFO ? odoo.service.server: Initiating shutdown 
+2024-11-18 03:46:32,028 23780 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2024-11-18 03:46:32,458 23780 INFO ? odoo.sql_db: ConnectionPool(read/write;used=0/count=0/max=64): Closed 2 connections  
+2024-11-18 03:51:04,537 24252 INFO ? odoo: Odoo version 18.0 
+2024-11-18 03:51:04,538 24252 INFO ? odoo: Using configuration file at C:\Users\KHANG\Desktop\OdooProject\odoo.conf 
+2024-11-18 03:51:04,538 24252 INFO ? odoo: addons paths: ['C:\\Users\\KHANG\\Desktop\\OdooProject\\odoo\\addons', 'c:\\odoo\\data\\addons\\18.0', 'c:\\odoo\\addons', 'c:\\odoo\\custom', 'c:\\users\\khang\\desktop\\odooproject\\odoo\\addons'] 
+2024-11-18 03:51:04,538 24252 INFO ? odoo: database: odoo@localhost:5432 
+2024-11-18 03:51:04,654 24252 INFO ? odoo.addons.base.models.ir_actions_report: You need Wkhtmltopdf to print a pdf version of the reports. 
+2024-11-18 03:51:04,659 24252 INFO ? odoo.addons.base.models.ir_actions_report: You need Wkhtmltoimage to generate images from html. 
+2024-11-18 03:51:04,837 24252 CRITICAL ? odoo.modules.module: Couldn't load module web 
+2024-11-18 03:51:04,837 24252 ERROR ? odoo.service.server: Failed to load server-wide module `web`.
+The `web` module is provided by the addons found in the `openerp-web` project.
+Maybe you forgot to add those addons in your addons_path configuration. 
+Traceback (most recent call last):
+  File "C:\Users\KHANG\Desktop\OdooProject\odoo\service\server.py", line 1252, in load_server_wide_modules
+    odoo.modules.module.load_openerp_module(m)
+  File "C:\Users\KHANG\Desktop\OdooProject\odoo\modules\module.py", line 384, in load_openerp_module
+    __import__(qualname)
+ModuleNotFoundError: No module named 'odoo.addons.web'
+2024-11-18 03:51:04,844 24252 INFO ? odoo.service.server: HTTP service (werkzeug) running on Macbook:8069 
+2024-11-18 03:51:08,129 24252 INFO ? odoo.service.server: Initiating shutdown 
+2024-11-18 03:51:08,129 24252 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2024-11-18 03:51:08,409 24252 INFO ? odoo.sql_db: ConnectionPool(read/write;used=0/count=0/max=64): Closed 2 connections  

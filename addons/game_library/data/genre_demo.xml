@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="genre_action" model="game.genre">
+        <field name="name">Action</field>
+    </record>
+    <record id="genre_adventure" model="game.genre">
+        <field name="name">Adventure</field>
+    </record>
+    <record id="genre_rpg" model="game.genre">
+        <field name="name">RPG</field>
+    </record>
+</odoo>

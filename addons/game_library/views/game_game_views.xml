@@ -1,0 +1,134 @@
+<odoo>
+    <!-- Form View -->
+    <record id="view_game_management_form" model="ir.ui.view">
+        <field name="name">game.game.form</field>
+        <field name="model">game.game</field>
+        <field name="arch" type="xml">
+            <form string="Game Management">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="number"/>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                            <field name="genre_ids" widget="many2many_tags"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="release_date"/>
+                            </group>
+                            <group class="d-flex w-100">
+                                <group class="me-3" style="flex: 1;">
+                                    <field name="price" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                </group>
+                                <group style="flex: 0.5;">
+                                    <field name="currency_id"/>
+                                </group>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="developer"/>
+                            <field name="publisher"/>
+                        </group>
+                        <group>
+                            <field name="cover" class="oe_avatar" widget="image"/>
+                        </group>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="view_game_management_list" model="ir.ui.view">
+        <field name="name">game.game.list</field>
+        <field name="model">game.game</field>
+        <field name="arch" type="xml">
+            <list string="Game Management">
+                <field name="cover" class="img img-thumbnail" widget="image" optional="hide"/>
+                <field name="number"/>
+                <field name="name"/>
+                <field name="description" optional="hide"/>
+                <field name="genre_ids" widget="many2many_tags"/>
+                <field name="release_date"/>
+                <field name="price" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                <field name="currency_id" class="d-none"/>
+                <field name="developer"/>
+                <field name="publisher"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Kanban View -->
+    <record id="view_game_management_kanban" model="ir.ui.view">
+        <field name="name">game.game.kanban</field>
+        <field name="model">game.game</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile" sample="1" quick_create="false">
+                <templates>
+                    <t t-name="card">
+                        <field name="currency_id" class="d-none"/>
+                        <div class="p-2">
+                            <div class="o_kanban_image">
+                                <img t-if="record.cover"
+                                     t-att-src="record.cover"
+                                     class="img img-thumbnail"
+                                     alt="Game Cover"/>
+                            </div>
+                            <div class="o_kanban_details">
+                                <h4 class="fw-bolder">
+                                    <field name="name"/>
+                                </h4>
+                                <div class="text-muted">
+                                    <span>
+                                        <field name="number"/>
+                                    </span>
+                                    <span t-if="record.release_date" class="ms-3">📅
+                                        <field name="release_date"/>
+                                    </span>
+                                </div>
+                                <div>
+                                    <field name="genre_ids" widget="many2many_tags"/>
+                                </div>
+                            </div>
+                            <footer class="d-flex justify-content-between mt-2">
+                                <span class="fw-bold text-success">
+                                    <field name="price" widget="monetary"
+                                           options="{'currency_field': 'currency_id'}"
+                                           class="fw-bolder ms-auto flex-shrink-0"/>
+                                </span>
+                                <span class="text-end text-muted">
+                                    <field name="developer"/>
+                                </span>
+                            </footer>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!--    Graph View -->
+    <record id="view_game_game_graph" model="ir.ui.view">
+        <field name="name">game.game.graph</field>
+        <field name="model">game.game</field>
+        <field name="arch" type="xml">
+            <graph string="Game Statistics" type="bar">
+                <field name="genre_ids" type="many2many" string="Genre"/>
+                <field name="price" type="float" string="Price"/>
+                <!--                <field name="release_date" type="date" string="Release Date" />-->
+                <!--                <field name="developer" type="many2one" string="Developer"/>-->
+            </graph>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_game_management" model="ir.actions.act_window">
+        <field name="name">Game Management</field>
+        <field name="res_model">game.game</field>
+        <field name="view_mode">list,kanban,form,graph</field>
+    </record>
+</odoo>

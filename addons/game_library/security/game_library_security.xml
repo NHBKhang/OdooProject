@@ -1,0 +1,17 @@
+<odoo>
+    <!-- Rule: Users can only access their own libraries -->
+    <record id="rule_game_library_user" model="ir.rule">
+        <field name="name">Game Library: User Access</field>
+        <field name="model_id" ref="model_game_library"/>
+        <field name="domain_force">[('user_id', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <!-- Rule: Admins can access all libraries -->
+    <record id="rule_game_library_admin" model="ir.rule">
+        <field name="name">Game Library: Admin Access</field>
+        <field name="model_id" ref="model_game_library"/>
+        <field name="domain_force">[]</field>
+        <field name="groups" eval="[(4, ref('base.group_system'))]"/>
+    </record>
+</odoo>

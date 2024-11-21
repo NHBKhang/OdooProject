@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="library_1" model="game.library">
+        <field name="name">Demo's Game Library</field>
+        <field name="user_id" ref="base.user_demo"/>
+        <field name="game_ids" eval="[(6, 0, [ref('game_1'), ref('game_2')])]"/>
+    </record>
+
+    <record id="library_2" model="game.library">
+        <field name="name">Admin's Game Library</field>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="game_ids" eval="[(6, 0, [ref('game_3'), ref('game_4')])]"/>
+    </record>
+</odoo>

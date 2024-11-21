@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form View -->
+    <record id="view_game_library_form" model="ir.ui.view">
+        <field name="name">game.library.form</field>
+        <field name="model">game.library</field>
+        <field name="arch" type="xml">
+            <form string="User Game Library">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="user_id"/>
+                        <field name="game_ids" widget="many2many_tags"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="view_game_library_list" model="ir.ui.view">
+        <field name="name">game.library.list</field>
+        <field name="model">game.library</field>
+        <field name="arch" type="xml">
+            <list string="User Game Library">
+                <field name="name"/>
+                <field name="user_id"/>
+                <field name="game_ids" widget="many2many_tags"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_library_management" model="ir.actions.act_window">
+        <field name="name">Game Library Management</field>
+        <field name="res_model">game.library</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

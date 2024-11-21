@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+        id="game_release_report_pdf"
+        model="game.release.report"
+        string="Game Release Report PDF"
+        report_type="qweb-pdf"
+        name="game_library.game_release_report_pdf"
+        file="game_library.game_release_report_pdf"
+        attachment_use="False"/>
+
+    <!-- Pivot View -->
+    <record id="view_release_report_pivot" model="ir.ui.view">
+        <field name="name">game.release.report.pivot</field>
+        <field name="model">game.release.report</field>
+        <field name="arch" type="xml">
+            <pivot string="Release Report">
+                <field name="year" type="row"/>
+                <field name="month" type="row"/>
+                <field name="game_count" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="view_release_report_tree" model="ir.ui.view">
+        <field name="name">game.release.report.list</field>
+        <field name="model">game.release.report</field>
+        <field name="arch" type="xml">
+            <list string="Release Report">
+                <field name="year"/>
+                <field name="month"/>
+                <field name="game_count"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Graph View -->
+    <record id="view_release_report_graph" model="ir.ui.view">
+        <field name="name">game.release.report.graph</field>
+        <field name="model">game.release.report</field>
+        <field name="arch" type="xml">
+            <graph string="Release Report" type="bar">
+                <field name="year" type="row"/>
+                <field name="month" type="row"/>
+                <field name="game_count" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_game_release_report" model="ir.actions.act_window">
+        <field name="name">Game Release Report</field>
+        <field name="res_model">game.release.report</field>
+        <field name="view_mode">graph,list,pivot</field>
+        <field name="context">{}</field>
+    </record>
+    <record id="action_release_report_pdf" model="ir.actions.report">
+        <field name="name">Game Release Report</field>
+        <field name="model">game.release.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">game_library.game_release_report_pdf</field>
+    </record>
+</odoo>

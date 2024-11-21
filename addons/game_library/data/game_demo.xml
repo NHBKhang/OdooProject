@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="game_1" model="game.game">
+        <field name="number">CBPK-1759</field>
+        <field name="name">Cyberpunk 2077</field>
+        <field name="description">Futuristic RPG</field>
+        <field name="genre_ids" eval="[(6, 0, [ref('genre_rpg')])]"/>
+        <field name="release_date">2020-12-10</field>
+        <field name="price">59.99</field>
+        <field name="currency_id" ref="base.USD"/>
+        <field name="developer">CD Projekt Red</field>
+        <field name="publisher">CD Projekt</field>
+        <field name="cover" file="game_library/static/src/img/cyberpunk2077.jpg" type="base64"/>
+    </record>
+
+    <record id="game_2" model="game.game">
+        <field name="number">TWWH-3175</field>
+        <field name="name">The Witcher 3: Wild Hunt</field>
+        <field name="description">Action RPG with a dark fantasy world</field>
+        <field name="genre_ids" eval="[(6, 0, [ref('genre_rpg')])]"/>
+        <field name="release_date">2015-05-19</field>
+        <field name="price">49.99</field>
+        <field name="currency_id" ref="base.USD"/>
+        <field name="developer">CD Projekt Red</field>
+        <field name="publisher">CD Projekt</field>
+    </record>
+
+    <record id="game_3" model="game.game">
+        <field name="number">TESS-5346</field>
+        <field name="name">The Elder Scrolls V: Skyrim</field>
+        <field name="description">Open-world action RPG</field>
+        <field name="genre_ids" eval="[(6, 0, [ref('genre_rpg')])]"/>
+        <field name="release_date">2011-11-11</field>
+        <field name="price">39.99</field>
+        <field name="currency_id" ref="base.USD"/>
+        <field name="developer">Bethesda Game Studios</field>
+        <field name="publisher">Bethesda Softworks</field>
+    </record>
+
+    <record id="game_4" model="game.game">
+        <field name="number">RDRT-2368</field>
+        <field name="name">Red Dead Redemption 2</field>
+        <field name="description">Action-adventure set in the Wild West</field>
+        <field name="genre_ids" eval="[(6, 0, [ref('genre_action'), ref('genre_adventure')])]"/>
+        <field name="release_date">2018-10-26</field>
+        <field name="price">59.99</field>
+        <field name="currency_id" ref="base.USD"/>
+        <field name="developer">Rockstar Games</field>
+        <field name="publisher">Rockstar Games</field>
+    </record>
+</odoo>

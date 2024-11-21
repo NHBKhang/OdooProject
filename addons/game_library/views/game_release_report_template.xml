@@ -1,0 +1,27 @@
+<odoo>
+    <template id="game_release_report_pdf">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <h2>Game Release Report</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Month</th>
+                            <th>Number of Releases</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="data['statistics']" t-as="row">
+                            <tr>
+                                <td><span t-esc="int(row['year'])"/></td>
+                                <td><span t-esc="int(row['month'])"/></td>
+                                <td><span t-esc="row['count']"/></td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+</odoo>

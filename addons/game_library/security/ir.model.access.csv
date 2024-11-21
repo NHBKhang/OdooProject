@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_game_game,access_game_game,model_game_game,base.group_user,1,1,1,1
+access_game_library_user,access_game_library_user,model_game_library,base.group_user,1,0,0,0
+access_game_library_manager,access_game_library_manager,model_game_library,base.group_system,1,1,1,1
+access_game_genre,access_game_genre,model_game_genre,,1,1,1,1
+access_game_release_report,access_game_release_report,model_game_release_report,,1,1,1,1

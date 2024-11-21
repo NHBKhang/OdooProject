@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="game_management_root" name="Game Management" sequence="10">
+        <menuitem id="menu_game" name="Games" sequence="1" action="action_game_management"/>
+        <menuitem id="menu_library" name="Libraries" sequence="2" action="action_library_management"/>
+        <menuitem id="menu_game_report" name="Reporting" sequence="3">
+            <menuitem id="menu_game_release_report" name="Release Report" action="action_game_release_report"/>
+            <menuitem id="menu_release_report_pdf" name="Export PDF Report" action="action_release_report_pdf"/>
+        </menuitem>
+    </menuitem>
+</odoo>
